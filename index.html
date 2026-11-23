@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jenniffer & Pedro · Nos casamos</title>
+<meta name="description" content="Acompáñanos a celebrar nuestra boda · 22 de mayo de 2027 · Juan Dolio.">
+<meta property="og:title" content="Jenniffer & Pedro · Nos casamos">
+<meta property="og:description" content="Acompáñanos a celebrar nuestra boda · 22 de mayo de 2027 · Juan Dolio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://invitavale.com/Boda-Jenniffer-Pedro/">
+<meta property="og:image" content="http://invitavale.com/Boda-Jenniffer-Pedro/img/foto-portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f2ef">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pinyon+Script&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vino:#521219;
+  --vino-2:#3f0d13;
+  --crema:#f6f2ef;
+  --card:#f8f4f1;
+  --tinta:#4a1a20;
+  --oro:#e6c99c;
+  --oro-txt:#f3d3a8;
+  --malva:#a7868d;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --script:'Pinyon Script', cursive;
+  --sans:'Marcellus', Georgia, serif;
+  --app:480px;
+  --vid:min(21%,100px);          /* ancho de la enredadera lateral */
+  --brush:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 50' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f2ef' d='M0 30C70 20 130 14 200 20S330 36 400 25V50H0Z'/%3E%3Cg fill='none' stroke='%23f6f2ef' stroke-linecap='round' vector-effect='non-scaling-stroke'%3E%3Cpath stroke-width='1.8' d='M6 24C40 17 80 13 132 13' vector-effect='non-scaling-stroke'/%3E%3Cpath stroke-width='1' d='M24 19C60 13 92 10 118 10' vector-effect='non-scaling-stroke'/%3E%3Cpath stroke-width='1.4' d='M232 16C270 18 300 22 336 24' vector-effect='non-scaling-stroke'/%3E%3Cpath stroke-width='2' d='M340 21C360 19 380 17 398 16' vector-effect='non-scaling-stroke'/%3E%3Cpath stroke-width='.9' d='M150 9C176 8 196 10 214 12' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);color:var(--tinta);background:#e8e1db;
+  font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.locked{overflow:hidden;height:100vh}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+.app{position:relative;max-width:var(--app);margin:0 auto;background:var(--crema);box-shadow:0 0 60px rgba(60,20,25,.12);overflow:clip}
+.wrap{position:relative;z-index:1;padding:0 26px}
+
+/* enredaderas laterales difuminadas */
+.vides{
+  background:
+    url(img/enredadera-izq.png) left -22px top / var(--vid) auto repeat-y,
+    url(img/enredadera-der.png) right -22px top 180px / var(--vid) auto repeat-y,
+    var(--crema);
+}
+
+section{position:relative;padding:70px 0;text-align:center}
+.script{font-family:var(--script);font-weight:400;color:var(--vino);line-height:1.15}
+.titulo{font-family:var(--serif);font-weight:700;text-transform:uppercase;color:var(--vino);font-size:clamp(24px,6.8vw,30px);line-height:1.1;letter-spacing:.01em}
+.subt{font-family:var(--serif);font-weight:500;text-transform:uppercase;color:var(--vino);font-size:17px;letter-spacing:.03em}
+.texto{font-size:16px;color:var(--tinta);max-width:300px;margin:0 auto}
+.texto b{font-weight:700;color:var(--vino)}
+
+/* botón con forma de hoja */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  padding:9px 34px;min-width:190px;border:0;border-radius:44px 3px 44px 10px;
+  background:var(--vino);color:#f3e2d0;cursor:pointer;text-decoration:none;
+  transition:transform .2s ease, filter .2s ease;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.btn.claro{background:var(--crema);color:var(--vino)}
+
+/* ornamento dorado */
+.orn{display:block;width:min(260px,66%);height:auto;margin:0 auto}
+
+/* ---------- PORTADA ---------- */
+#portada{
+  position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,var(--app));z-index:50;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 24px;
+  transition:opacity 1s ease, visibility 1s ease;
+}
+#portada.hide{opacity:0;visibility:hidden}
+#portada .nombres{font-size:clamp(50px,14vw,68px)}
+#portada .nombres span{display:block}
+#portada .amp{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.46em;line-height:1;margin:.05em 0 .12em}
+.corazones{width:74px;margin:34px auto 46px;color:var(--vino);animation:latido 2.4s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1)}12%{transform:scale(1.07)}24%{transform:scale(1)}36%{transform:scale(1.05)}}
+#abrir{box-shadow:0 0 0 3px var(--oro)}
+.versiculo{max-width:300px;margin:-14px auto 34px;color:var(--vino)}
+.versiculo p{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.45}
+.versiculo cite{display:block;margin-top:10px;font-family:var(--serif);font-style:normal;font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+
+/* ---------- FOTO FIJA (efecto parallax) ---------- */
+.foto-hero{position:sticky;top:0;height:62vh;height:62svh;z-index:0;overflow:hidden}
+.foto-hero img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.contenido{position:relative;z-index:1}
+.contenido::before{
+  content:"";position:absolute;left:0;right:0;top:-58px;height:60px;
+  background:url(img/borde-pincel.svg) center/100% 100% no-repeat;pointer-events:none;
+}
+
+/* ---------- HERO ---------- */
+#inicio{min-height:38vh;min-height:38svh;padding:6px 0 22px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-names{font-size:clamp(48px,13.5vw,64px)}
+.hero-names span{display:block}
+.hero-names .amp{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.46em;line-height:1;margin:.05em 0 .12em}
+.nos-casamos{font-family:var(--serif);font-size:19px;letter-spacing:.04em;color:var(--vino);margin-top:14px}
+
+/* fecha */
+#fecha-box{padding:40px 0 30px}
+.fecha-card{
+  width:min(150px,44%);margin:24px auto;padding:14px 10px 16px;border-radius:24px;border-radius:30px;background:var(--card);
+  box-shadow:0 14px 30px rgba(70,30,30,.12);
+}
+.fecha-card .d{font-family:var(--script);font-size:48px;line-height:1.05;color:var(--vino)}
+.fecha-card .m{font-size:15px;text-transform:uppercase;letter-spacing:.03em;color:var(--vino);margin:6px 0 4px}
+.fecha-card .y{font-family:var(--script);font-size:31px;line-height:1.1;color:var(--vino)}
+
+/* cuenta regresiva */
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,3vw,14px);max-width:270px;margin:30px auto 0;padding:0 4px}
+.countdown div{background:var(--vino);color:var(--oro-txt);border-radius:46px 3px 46px 12px;aspect-ratio:68/88;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.countdown b{font-size:clamp(21px,6vw,26px);font-weight:500;line-height:1}
+.countdown small{font-size:12.5px;margin-top:3px}
+
+/* calendario */
+#calendario{padding:40px 0 20px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:8px;max-width:250px;margin:16px auto 0;font-variant-numeric:oldstyle-nums}
+.cal-grid .h{font-size:15px;color:var(--vino);padding-bottom:4px}
+.cal-grid .c{height:32px;display:flex;align-items:center;justify-content:center;font-size:15.5px;font-weight:600;color:var(--vino);position:relative;isolation:isolate}
+.cal-grid .c.on{color:#f3e2d0}
+.cal-grid .c.on::before{content:"";position:absolute;inset:-6px 2px;border-radius:999px;background:var(--vino);z-index:-1}
+
+/* padres */
+#padres{padding:40px 0 40px}
+.monograma{font-size:58px;display:inline-flex;align-items:flex-start;line-height:1;margin:6px 0 46px}
+.monograma span:last-child{margin-left:-.28em;transform:translateY(.32em)}
+.bendicion{font-size:clamp(27px,7.4vw,34px);line-height:1.25;margin-bottom:30px}
+.padres h3{font-weight:700;font-size:clamp(18px,5vw,22px);text-transform:uppercase;color:var(--vino);letter-spacing:.02em;line-height:1.2}
+.padres p{font-size:16.5px;line-height:1.3;color:var(--tinta);margin:10px 0 24px}
+
+/* lugares */
+.lugar{padding:20px 0 50px}
+.lugar img{width:min(108px,30vw);margin:20px auto 24px}
+.lugar img.ancho{width:min(185px,48vw)}
+.lugar img.foto-lugar{width:min(360px,92vw)}
+.lugar-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:26px}
+.lugar-row .hora{font-size:clamp(23px,6.4vw,28px);font-weight:700;color:var(--vino);line-height:1;white-space:nowrap}
+.lugar-row .barra{width:2px;align-self:stretch;min-height:46px;background:var(--vino)}
+.lugar-row .sitio{text-align:left;font-size:16.5px;line-height:1.2;color:var(--tinta);max-width:150px}
+
+/* polaroids */
+.galeria{padding:56px 0 40px}
+.polaroid{
+  width:72%;margin:0 auto 34px;background:#fff;padding:9px 9px 40px;
+  box-shadow:0 12px 26px rgba(60,30,25,.18);rotate:-4deg;
+}
+.polaroid:nth-child(even){rotate:4deg}
+.polaroid img,.polaroid video{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 35%;background:#ddd}
+.polaroid + .polaroid{margin-top:48px}
+
+/* itinerario */
+#itinerario{padding:50px 0 90px}
+#itinerario .script{font-size:clamp(38px,10.6vw,46px);margin-bottom:14px}
+.itin-intro{font-style:italic;margin-bottom:30px!important}
+.t-item .tx b.rango{font-size:clamp(16px,4.4vw,18px)}
+.t-item .tx small{display:block;font-size:13.5px;line-height:1.25;color:#7a5a5e;margin-top:4px;font-style:italic}
+.lugar .dir{font-size:15px;color:#7a5a5e;font-style:italic;margin:-10px auto 22px;max-width:260px}
+#timeline{max-width:290px;margin:0 auto}
+.t-item{display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;min-height:112px}
+.t-item .ico img{max-width:min(104px,100%);max-height:92px;margin:0 auto;object-fit:contain;filter:grayscale(1) contrast(.9)}
+.t-item .tx b{display:block;font-size:clamp(20px,5.6vw,24px);font-weight:700;color:var(--vino);line-height:1.05}
+.t-item .tx span{display:block;font-size:14.5px;line-height:1.2;color:var(--tinta);margin-top:4px}
+.t-line{position:relative;align-self:stretch}
+.t-line::before{content:"";position:absolute;top:0;bottom:0;width:28px;border:0 solid var(--vino)}
+.t-item:nth-child(4n+1) .t-line::before{
+  left:50%;border-left-width:1.5px;border-top-width:1.5px;border-top-left-radius:28px;
+  -webkit-mask:linear-gradient(90deg,#000 30%,transparent);mask:linear-gradient(90deg,#000 30%,transparent);
+}
+.t-item:nth-child(4n+3) .t-line::before{
+  right:50%;border-right-width:1.5px;border-bottom-width:1.5px;border-bottom-right-radius:28px;
+  -webkit-mask:linear-gradient(270deg,#000 30%,transparent);mask:linear-gradient(270deg,#000 30%,transparent);
+}
+.t-dot{display:block;width:10px;height:10px;border-radius:50%;background:var(--vino);margin:10px auto}
+
+/* secciones vino con borde de pincel */
+.vino{background:var(--vino);color:#f3e7dc;padding:110px 0 120px}
+.vino::before,.vino::after{content:"";position:absolute;left:0;right:0;height:60px;background:url(img/borde-pincel.svg) center/100% 100% no-repeat;pointer-events:none}
+.vino::before{top:-1px;transform:scaleY(-1)}
+.vino::after{bottom:-1px}
+.vino .titulo{color:#f6ece2}
+.vino .texto{color:#f0e2d6}
+
+/* regalos */
+.mesa-logo{max-width:280px;margin:44px auto 22px}
+.qr{width:190px;margin:50px auto 18px;background:#fff;border-radius:10px;padding:12px}
+.regalo-dest{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:16px;color:var(--oro-txt);max-width:300px;margin:22px auto 14px;line-height:1.35}
+.regalo-sobre{margin-top:46px;padding-top:30px;border-top:1px solid rgba(230,201,156,.35)}
+.itin-cierre{margin-top:40px}
+.con-amor{font-weight:700;font-size:17px;color:var(--vino);margin-top:22px}
+.itin-firma{font-size:clamp(34px,9.4vw,42px);margin-top:4px;padding-bottom:10px}
+.cuenta-bloque{margin:18px 0 4px;text-align:left}
+.cuenta-bloque h4{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--vino);line-height:1.25}
+.regalo-btns{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px}
+
+/* tarjetas */
+.cards{padding:50px 0 30px}
+.card{max-width:300px;margin-left:auto!important;margin-right:auto!important;background:var(--card);border-radius:30px;box-shadow:0 14px 34px rgba(70,30,30,.12);padding:30px 20px 34px;margin:0 6px 40px}
+.dress-ill{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end;max-width:270px;margin:20px auto 24px}
+.dress-tipo{font-size:20px;letter-spacing:.06em;color:var(--vino);margin-top:6px}
+.paleta{display:flex;justify-content:center;flex-wrap:wrap;gap:2px;margin:12px 0 14px}
+.paleta i{box-shadow:inset 0 0 0 1px rgba(60,30,30,.18);width:clamp(19px,5.4vw,24px);height:clamp(19px,5.4vw,24px);border-radius:50%}
+.card .camara{width:54px;margin:0 auto 20px;filter:grayscale(1)}
+.card .texto{margin:20px auto 30px}
+
+/* recomendaciones */
+#recomendaciones{padding:50px 0 60px}
+#recomendaciones .script{font-size:clamp(33px,9.2vw,42px);margin-bottom:40px}
+.rec{margin-bottom:44px}
+.rec img{height:70px;width:auto;margin:0 auto 26px;filter:grayscale(1)}
+.rec img.ancho{height:auto;width:min(155px,40vw)}
+
+/* pase */
+#pase{padding:100px 0 110px}
+#pase .invitado{font-family:var(--script);font-size:clamp(31px,8.6vw,38px);color:var(--oro-txt);line-height:1.15;margin:22px 0;word-break:break-word}
+#pase .valida{font-size:14.5px;font-style:italic;opacity:.85;margin-top:14px}
+#pase .pases{font-size:28px;font-weight:600;color:var(--oro-txt);margin-top:26px}
+
+/* rsvp */
+#rsvp{padding:70px 0 40px}
+#rsvp .script{font-size:clamp(36px,10vw,45px);line-height:1.2;margin-bottom:26px}
+form{text-align:left;margin-top:40px;display:grid;gap:12px}
+label{font-family:var(--sans);font-size:16px;color:var(--tinta);display:block;margin-bottom:6px}
+input,textarea,select{
+  width:100%;font-family:var(--sans);font-size:15px;color:var(--tinta);background:rgba(246,242,239,.7);
+  border:1.5px solid var(--vino);border-radius:12px;padding:10px 16px;outline:none;-webkit-appearance:none;appearance:none;
+}
+select{background:rgba(246,242,239,.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23521219' d='M0 0h12L6 8z'/%3E%3C/svg%3E") right 22px center/13px no-repeat;padding-right:48px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{box-shadow:0 0 0 3px rgba(82,18,25,.15)}
+::placeholder{color:#8f7b7c}
+.enviar{justify-self:center;font-family:var(--sans);font-size:16px;background:var(--vino);color:#f6ece2;border:0;border-radius:12px;padding:12px 32px;margin-top:4px;cursor:pointer}
+.gforms{width:52px;margin:0 auto 18px}
+.form-msg{text-align:center;font-style:italic;min-height:1.4em}
+
+/* cierre */
+#cierre{padding:60px 0 50px}
+#cierre .anillos{width:64px;margin:0 auto 22px;filter:grayscale(1)}
+#cierre .texto{font-size:16px;color:#6b2a33}
+.amor{font-weight:700;font-size:17px;color:var(--vino);margin-top:26px}
+.firma{font-size:clamp(30px,8.4vw,37px);margin-top:16px}
+footer{font-family:var(--sans);font-size:13px;letter-spacing:.08em;color:#8f7b7c;text-align:center;padding:20px 0 40px}
+footer a{color:var(--vino);text-decoration:none}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(40,10,14,.6);backdrop-filter:blur(3px)}
+.modal.open{display:flex;animation:fade .25s ease}
+@keyframes fade{from{opacity:0}}
+.modal .box{background:var(--crema);border-radius:26px;max-width:420px;width:100%;padding:34px 24px 26px;text-align:center;position:relative;max-height:90vh;overflow:auto}
+.modal .x{position:absolute;top:10px;right:16px;background:none;border:0;font-size:32px;color:var(--vino);cursor:pointer;line-height:1}
+.modal h3{font-family:var(--script);font-weight:400;font-size:46px;color:var(--vino);line-height:1.1}
+.modal .dir{font-style:italic;color:var(--tinta);margin-top:6px}
+.modal iframe{width:100%;height:240px;border:0;border-radius:16px;margin:14px 0 18px;background:#eee}
+.cuenta{display:grid;gap:10px;margin:18px 0 6px;text-align:left}
+.cuenta div{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px dashed rgba(82,18,25,.25);padding:8px 2px}
+.cuenta small{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8f7b7c;display:block}
+.copy{font-family:var(--sans);font-size:12px;border:1px solid var(--vino);color:var(--vino);background:none;border-radius:999px;padding:7px 14px;cursor:pointer;flex-shrink:0}
+.copy.ok{background:var(--vino);color:var(--crema)}
+
+/* música */
+#musica{
+  position:fixed;bottom:calc(22px + env(safe-area-inset-bottom));right:max(18px, calc(50% - var(--app)/2 + 18px));z-index:40;
+  width:48px;height:48px;border-radius:50%;border:0;background:var(--malva);color:#fff;cursor:pointer;
+  display:none;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(80,40,50,.25);
+}
+#musica.show{display:flex}
+#musica svg{width:22px;height:22px}
+#musica.playing::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--malva);opacity:.35;z-index:-1;animation:onda 2s ease-out infinite}
+@keyframes onda{to{transform:scale(1.7);opacity:0}}
+
+/* animaciones */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease, transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .corazones,#musica.playing::after{animation:none}
+}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ornamento" viewBox="0 0 300 30">
+    <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+      <path d="M26 15H128M172 15H274"/>
+      <path d="M150 7l20 8-20 8-20-8z"/>
+      <path d="M26 15c-8 0-14-5-12-10 2-4 9-3 9 2 0 3-4 4-5 2"/>
+      <path d="M274 15c8 0 14-5 12-10-2-4-9-3-9 2 0 3 4 4 5 2"/>
+      <path d="M44 15c6-7 14-7 18 0 3 5 10 5 13 0M256 15c-6-7-14-7-18 0-3 5-10 5-13 0"/>
+      <path d="M104 15c4-5 10-5 13 0M196 15c-4-5-10-5-13 0"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- PORTADA -->
+<div id="portada" class="vides">
+  <h1 class="script nombres"><span data-novia></span><span class="amp">&amp;</span><span data-novio></span></h1>
+  <svg class="corazones" viewBox="0 0 96 90" aria-hidden="true">
+    <path d="M44 74C20 58 6 46 6 30 6 19 14 11 24 11c8 0 14 4 18 10 4-6 10-10 18-10 10 0 18 8 18 19 0 7-3 13-8 19" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M70 86C58 78 52 72 52 64c0-6 4-10 9-10 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 4 9 10 0 8-6 14-18 22z" fill="var(--crema)" stroke="currentColor" stroke-width="1.6"/>
+  </svg>
+  <blockquote class="versiculo">
+    <p>“Así que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre.”</p>
+    <cite>Mateo 19:6</cite>
+  </blockquote>
+  <button class="btn" id="abrir">Ver invitación</button>
+</div>
+
+<div class="app">
+  <!-- FOTO FIJA -->
+  <div class="foto-hero"><img id="foto-portada" alt="Foto de los novios"></div>
+
+  <main class="contenido vides">
+    <!-- NOMBRES -->
+    <section id="inicio">
+      <div class="wrap reveal">
+        <h2 class="script hero-names"><span data-novia></span><span class="amp">&amp;</span><span data-novio></span></h2>
+        <p class="nos-casamos">¡NOS CASAMOS!</p>
+      </div>
+    </section>
+
+    <!-- FECHA + CUENTA REGRESIVA -->
+    <section id="fecha-box">
+      <div class="wrap reveal">
+        <img class="orn" src="img/ornamento.png" alt="">
+        <div class="fecha-card">
+          <div class="d" data-dia></div>
+          <div class="m" data-mes></div>
+          <div class="y" data-anio></div>
+        </div>
+        <img class="orn" src="img/ornamento.png" alt="">
+        <div class="countdown" aria-live="polite">
+          <div><b id="cd-d">0</b><small>Días</small></div>
+          <div><b id="cd-h">00</b><small>Hrs.</small></div>
+          <div><b id="cd-m">00</b><small>Min.</small></div>
+          <div><b id="cd-s">00</b><small>Seg.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section id="calendario">
+      <div class="wrap reveal">
+        <p class="subt">Guarda la fecha</p>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+    </section>
+
+    <!-- PADRES (se oculta si no hay nombres en CONFIG) -->
+    <section id="padres">
+      <div class="wrap reveal">
+        <div class="script monograma"><span id="ini-1"></span><span id="ini-2"></span></div>
+        <p class="script bendicion">Con la bendición de Dios y Nuestros Padres</p>
+        <div class="padres">
+          <h3>Padres del novio</h3><p id="padres-novio"></p>
+          <h3>Padres de la novia</h3><p id="padres-novia"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LUGARES -->
+    <section id="lugares">
+      <div class="wrap" id="lista-lugares"></div>
+    </section>
+
+    <!-- GALERÍA 1 -->
+    <section class="galeria" id="galeria-1"></section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario">
+      <div class="wrap">
+        <h2 class="script reveal">Itinerario</h2>
+        <p class="texto itin-intro reveal" id="itin-intro"></p>
+        <div id="timeline"></div>
+        <div class="itin-cierre reveal">
+          <p class="texto">Gracias por ser parte de nuestra historia de amor. Hoy celebramos una promesa y comenzamos una vida juntos, con Dios como centro de nuestro hogar. 🤍</p>
+          <p class="con-amor">Con amor,</p>
+          <p class="script itin-firma"><span data-novia></span> &amp; <span data-novio></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA 3 -->
+    <section class="galeria" id="galeria-3"></section>
+
+    <!-- REGALOS -->
+    <section id="regalos" class="vino">
+      <div class="wrap reveal">
+        <h2 class="titulo">🤍 Obsequio para los novios 🤍</h2>
+        <p class="texto" style="margin-top:22px">Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, podrán hacerlo en efectivo o por transferencia; en la recepción habrá una caja de sobres.</p>
+        <p class="texto" style="margin-top:14px">¡Gracias por acompañarnos en este nuevo comienzo!</p>
+        <img class="mesa-logo" id="mesa-logo" alt="" hidden>
+        <img class="qr" id="qr" alt="Código QR de la cuenta bancaria" hidden>
+        <div class="regalo-btns">
+          <a class="btn claro" id="btn-mesa" target="_blank" rel="noopener">Ver mesa de regalos</a>
+          <button class="btn claro" data-open="modal-cuenta">Cuenta bancaria</button>
+        </div>
+        <p class="con-amor" style="color:#fff;margin-top:34px">Con amor,</p>
+        <p class="script itin-firma" style="color:#fff"><span data-novia></span> &amp; <span data-novio></span> <span style="font-size:.45em;vertical-align:middle">💍✨</span></p>
+      </div>
+    </section>
+
+    <!-- DRESS CODE + FOTOS -->
+    <section class="cards">
+      <div class="wrap">
+        <div class="card reveal">
+          <h2 class="titulo">Dress code</h2>
+          <p class="dress-tipo" id="dress-tipo"></p>
+          <div class="dress-ill">
+            <img src="img/dress-hombres.png" alt="Ejemplos de vestimenta para caballeros">
+            <img src="img/dress-mujeres.png" alt="Ejemplos de vestimenta para damas">
+          </div>
+          <p class="subt" style="font-size:22px">Colores reservados</p>
+          <div class="paleta" id="paleta"></div>
+          <p class="texto">Por favor, evita vestir de <b>palo de rosa, terracota, blanco y beige</b>.</p>
+        </div>
+        <div class="card reveal">
+          <img class="camara" src="img/camara.png" alt="">
+          <h2 class="titulo">Fotografías</h2>
+          <p class="texto">Captura cada momento inolvidable. Ayúdanos a guardar todos los recuerdos subiendo tus fotos en esta sección.</p>
+          <a class="btn" id="btn-fotos" target="_blank" rel="noopener">Compartir fotos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA 2 -->
+    <section class="galeria" id="galeria-2"></section>
+
+    <!-- RECOMENDACIONES -->
+    <section id="recomendaciones">
+      <div class="wrap">
+        <h2 class="script reveal">Recomendaciones</h2>
+        <div class="rec reveal"><img src="img/no-ninos.png" alt="">
+          <p class="texto">Para que todos podamos celebrar y disfrutar la noche con total libertad, hemos preparado una celebración <b>exclusivamente para adultos.</b></p></div>
+        <div class="rec reveal"><img src="img/celular.png" alt="">
+          <p class="texto">Usar <b>celular en modo vibración</b> para no interrumpir la ceremonia.</p></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA 4 -->
+    <section class="galeria" id="galeria-4"></section>
+
+    <!-- PASE PERSONAL (se muestra si la URL trae ?nombre=) -->
+    <section id="pase" class="vino">
+      <div class="wrap reveal">
+        <p class="texto">Nuestra felicidad no estaría completa sin ti en nuestra celebración:</p>
+        <p class="invitado" id="inv-nombre"></p>
+        <div id="inv-pases-wrap">
+          <p class="texto">Pases asignados con mucho cariño:</p>
+          <p class="pases" id="inv-pases">1</p>
+          <p class="texto valida" id="inv-valida"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <div class="wrap reveal">
+        <svg class="gforms" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.5 8.4A10.4 10.4 0 0 0 7.1 21l-1.5 5.4 5.6-1.5a10.4 10.4 0 0 0 5 1.3 10.4 10.4 0 0 0 7.3-17.8Zm-7.3 16a8.6 8.6 0 0 1-4.4-1.2l-.3-.2-3.3.9.9-3.2-.2-.3a8.6 8.6 0 1 1 7.3 4Zm4.7-6.4c-.3-.1-1.5-.8-1.8-.8-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a7 7 0 0 1-3.5-3c-.3-.5.3-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.8-.3Z"/></svg>
+        <h2 class="script">Confirma tu Asistencia</h2>
+        <p class="texto">Estamos cuidando cada detalle para que pases un día inolvidable. Ayúdanos confirmando tu asistencia lo antes posible por WhatsApp.</p>
+        <a class="btn" id="btn-rsvp" target="_blank" rel="noopener" style="margin-top:28px">Confirmar asistencia</a>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section id="cierre">
+      <div class="wrap reveal">
+        <img class="anillos" src="img/anillos.png" alt="">
+        <p class="texto">Contamos los días para abrazarte, brindar juntos y vivir el día más feliz de nuestras vidas. ¡Te esperamos!</p>
+        <p class="amor">Con todo nuestro amor</p>
+        <p class="script firma"><span data-novia></span> y <span data-novio></span></p>
+      </div>
+    </section>
+    <footer>Invitación digital por <a href="https://invitavale.com" target="_blank" rel="noopener">Invitavale</a></footer>
+  </main>
+</div>
+
+<!-- MODAL MAPA -->
+<div class="modal" id="modal-mapa" role="dialog" aria-modal="true" aria-labelledby="mapa-titulo">
+  <div class="box">
+    <button class="x" data-close aria-label="Cerrar">&times;</button>
+    <h3 id="mapa-titulo"></h3>
+    <p class="dir" id="mapa-dir"></p>
+    <iframe id="mapa-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa"></iframe>
+    <a class="btn" id="mapa-link" target="_blank" rel="noopener">Abrir en Google Maps</a>
+  </div>
+</div>
+
+<!-- MODAL CUENTA -->
+<div class="modal" id="modal-cuenta" role="dialog" aria-modal="true" aria-labelledby="cuenta-titulo">
+  <div class="box">
+    <button class="x" data-close aria-label="Cerrar">&times;</button>
+    <h3 id="cuenta-titulo">Cuenta bancaria</h3>
+    <div id="cuenta-datos"></div>
+  </div>
+</div>
+
+<button id="musica" aria-label="Pausar o reproducir música">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 3v11.55A4 4 0 1 0 12 18V7h5V3h-7Z"/></svg>
+</button>
+<audio id="audio" loop preload="auto" playsinline></audio>
+
+<script>
+/* ===================== EDITA AQUÍ LOS DATOS ===================== */
+const CONFIG = {
+  novio: "Pedro",
+  novia: "Jenniffer",
+  novioCompleto: "Pedro Alexander Garzón",
+  noviaCompleta: "Jenniffer Mercedes de la Rosa",
+  fecha: "2027-05-22T17:30:00",          // ⚠️ HORA PENDIENTE de confirmar con los novios (5:30 PM provisional)
+  musica: "musica.mp3",                  // "Creo en tu amor" (versión en inglés)
+  fotoPortada: "img/foto-portada.jpg",   // foto grande que se queda fija arriba
+  galeria: [                             // fotos tipo polaroid, repartidas de 2 en 2 en 4 bloques
+    "img/galeria-1.jpg", "img/galeria-2.jpg", "img/galeria-3.jpg", "img/galeria-4.jpg",
+    "img/galeria-5.jpg", "img/galeria-6.jpg", "img/galeria-7.jpg", "img/galeria-8.jpg"
+  ],
+  padresNovio: [],                       // deja [] para ocultar la sección de padres
+  padresNovia: [],
+  lugares: [
+    {
+      titulo: "Ceremonia y recepción",
+      img: "img/hostal.jpg",
+      hora: "5:30 PM",
+      lugar: "Hostal Villa Franchee's",
+      direccion: "Juan Dolio, República Dominicana",
+      maps: "https://maps.app.goo.gl/HQPn3GGwGHirQFU37",
+      embed: "Villa Franchee's Juan Dolio"   // búsqueda para el mapa dentro del modal
+    }
+  ],
+  itinerarioIntro: "Un día especial, una promesa eterna y el comienzo de una nueva historia juntos.",
+  itinerario: [
+    { hora: "5:30 PM",          titulo: "Ceremonia",                   detalle: "Nuestra unión bajo la bendición de Dios.", img: "img/anillos.png" },
+    { hora: "6:30 PM",          titulo: "Bienvenida",                  detalle: "Recepción y acomodo de los invitados.",  img: "img/salon.png" },
+    { hora: "6:45 – 7:30 PM",   titulo: "Sesión de fotografías",       detalle: "Los momentos más hermosos de la noche.",  img: "img/camara.png" },
+    { hora: "7:30 – 8:30 PM",   titulo: "Recepción y cena",            detalle: "Compartir, cenar y celebrar juntos.",    img: "img/mesa.png" },
+    { hora: "8:30 – 9:00 PM",   titulo: "Dinámicas y juegos",          detalle: "Alegría, sorpresas y risas para todos.", img: "img/icono-juegos.png" },
+    { hora: "9:00 PM",          titulo: "Brindis de los novios",       detalle: "Celebramos juntos nuestro amor.",        img: "img/icono-brindis.png" },
+    { hora: "9:15 PM",          titulo: "Lanzamiento del ramo",        detalle: "Buenos deseos para la próxima novia.",   img: "img/icono-ramo.png" },
+    { hora: "9:30 – 11:00 PM",  titulo: "¡Hora loca!",                 detalle: "Música, baile y mucha diversión.",       img: "img/icono-fiesta.png" },
+    { hora: "11:00 PM",         titulo: "Palabras de agradecimiento",  detalle: "Gratitud a Dios y a todos ustedes.",     img: "img/icono-palabras.png" },
+    { hora: "11:30 PM",         titulo: "Cierre de la celebración",    detalle: "Gracias por una noche inolvidable.",     img: "img/icono-cierre.png" }
+  ],
+  mesaRegalos: "",
+  mesaRegalosLogo: "",
+  cuentas: [
+    { etiqueta: "❤️ Novia", titular: "Jenniffer Mercedes de la Rosa", banco: "Banesco", tipo: "Cuenta corriente", numero: "98200095611" }
+  ],
+  qrCuenta: "",
+  albumFotos: "https://photos.app.goo.gl/fy6iCZTDucBhpkKh9",
+  dressCode: "FORMAL",
+  paleta: ["#D8A7A7", "#C8664A", "#FFFFFF", "#E3D3B8"],   // colores reservados: palo de rosa, terracota, blanco, beige
+  whatsapp: "18293158884",
+  mensajeRsvp: "¡Hola! Confirmo mi asistencia a la boda de Jenniffer y Pedro el 22 de mayo de 2027. 💍",
+  invitadoPorDefecto: "Invitado especial",  // nombre del pase si el link no trae ?nombre=
+  pasesPorDefecto: 1,
+  validaPorDefecto: ""
+};
+/* ================================================================ */
+
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const fecha = new Date(CONFIG.fecha);
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+function esc(s){ const d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+
+/* Textos básicos */
+$$("[data-novio]").forEach(e => e.textContent = CONFIG.novio);
+$$("[data-novia]").forEach(e => e.textContent = CONFIG.novia);
+$$("[data-dia]").forEach(e => e.textContent = fecha.getDate());
+$$("[data-mes]").forEach(e => e.textContent = MESES[fecha.getMonth()]);
+$$("[data-anio]").forEach(e => e.textContent = fecha.getFullYear());
+document.title = `${CONFIG.novia} & ${CONFIG.novio} · Nos casamos`;
+$("#foto-portada").src = CONFIG.fotoPortada;
+$("#ini-1").textContent = CONFIG.novia.charAt(0);
+$("#ini-2").textContent = CONFIG.novio.charAt(0);
+if (CONFIG.padresNovio.length || CONFIG.padresNovia.length) {
+  $("#padres-novio").innerHTML = CONFIG.padresNovio.map(esc).join("<br>");
+  $("#padres-novia").innerHTML = CONFIG.padresNovia.map(esc).join("<br>");
+} else $("#padres").remove();
+$("#lista-lugares").innerHTML = CONFIG.lugares.map(l => `
+  <div class="lugar reveal">
+    <h2 class="titulo">${esc(l.titulo)}</h2>
+    <img ${/salon/.test(l.img) ? 'class="ancho" ' : /hostal/.test(l.img) ? 'class="foto-lugar" ' : ""}src="${esc(l.img)}" alt="${esc(l.lugar)}">
+    <div class="lugar-row"><span class="hora">${esc(l.hora)}</span><span class="barra"></span><span class="sitio">${esc(l.lugar)}</span></div>
+    ${l.direccion ? `<p class="dir">${esc(l.direccion)}</p>` : ""}
+    <a class="btn" role="button" data-lugar="${CONFIG.lugares.indexOf(l)}">Ver ubicación</a>
+  </div>`).join("");
+$("#itin-intro").textContent = CONFIG.itinerarioIntro || "";
+if (!CONFIG.itinerarioIntro) $("#itin-intro").remove();
+if (CONFIG.dressCode) $("#dress-tipo").textContent = CONFIG.dressCode; else $("#dress-tipo").remove();
+
+/* Portada + música
+   iPhone/Safari y Chrome solo permiten sonido después de un toque del usuario:
+   el botón "Ver invitación" es ese toque, por eso play() se llama ahí mismo. */
+const audio = $("#audio"), btnMus = $("#musica");
+audio.src = CONFIG.musica;
+let musicaQuerida = false;
+function sonar(){
+  const p = audio.play();
+  if (p && p.then) p.then(() => btnMus.classList.add("playing")).catch(() => {
+    // si el navegador lo bloqueó, se reintenta con el siguiente toque en la página
+    const reintento = () => { audio.play().then(() => btnMus.classList.add("playing")).catch(() => {}); };
+    document.addEventListener("touchend", reintento, { once: true });
+    document.addEventListener("click", reintento, { once: true });
+  });
+}
+$("#abrir").addEventListener("click", () => {
+  musicaQuerida = true;
+  sonar();
+  $("#portada").classList.add("hide");
+  document.body.classList.remove("locked");
+  window.scrollTo(0, 0);
+  btnMus.classList.add("show");
+  $$(".polaroid video").forEach(v => v.play().catch(() => {}));
+});
+/* pausa si la persona sale de la página y reanuda al volver */
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) audio.pause();
+  else if (musicaQuerida) sonar();
+});
+btnMus.addEventListener("click", e => {
+  e.stopPropagation();
+  if (audio.paused) { musicaQuerida = true; sonar(); }
+  else { musicaQuerida = false; audio.pause(); btnMus.classList.remove("playing"); }
+});
+
+/* Cuenta regresiva */
+function tick(){
+  let diff = Math.max(0, fecha - new Date());
+  const d = Math.floor(diff/864e5); diff -= d*864e5;
+  const h = Math.floor(diff/36e5);  diff -= h*36e5;
+  const m = Math.floor(diff/6e4);   diff -= m*6e4;
+  const s = Math.floor(diff/1e3);
+  $("#cd-d").textContent = String(d).padStart(2,"0");
+  $("#cd-h").textContent = String(h).padStart(2,"0");
+  $("#cd-m").textContent = String(m).padStart(2,"0");
+  $("#cd-s").textContent = String(s).padStart(2,"0");
+}
+tick(); setInterval(tick, 1000);
+
+/* Calendario */
+(function(){
+  const y = fecha.getFullYear(), mo = fecha.getMonth();
+  const g = $("#cal-grid");
+  ["L","M","M","J","V","S","D"].forEach(d => g.insertAdjacentHTML("beforeend", `<div class="h">${d}</div>`));
+  const offset = (new Date(y, mo, 1).getDay() + 6) % 7;
+  const total = new Date(y, mo + 1, 0).getDate();
+  for (let i = 0; i < offset; i++) g.insertAdjacentHTML("beforeend", `<div></div>`);
+  for (let d = 1; d <= total; d++)
+    g.insertAdjacentHTML("beforeend", `<div class="c${d===fecha.getDate()?" on":""}">${d}</div>`);
+
+})();
+
+/* Galerías tipo polaroid */
+(function(){
+  const fotos = CONFIG.galeria || [];
+  const corte = Math.min(2, fotos.length);
+  const pinta = (sel, lista) => {
+    if (!lista.length) return $(sel).remove();
+    $(sel).innerHTML = lista.map(f => f && f.video
+      ? `<figure class="polaroid reveal"><video src="${esc(f.video)}" poster="${esc(f.poster || "")}" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture></video></figure>`
+      : `<figure class="polaroid reveal"><img src="${esc(f)}" alt="Foto de los novios" loading="lazy"></figure>`).join("");
+  };
+  // bloques en orden de aparición: lugar → itinerario → dress code → recomendaciones
+  ["#galeria-1", "#galeria-3", "#galeria-2", "#galeria-4"].forEach((sel, n) => pinta(sel, fotos.slice(n * 2, n * 2 + 2)));
+  const vio = new IntersectionObserver(es => es.forEach(en => {
+    const v = en.target; v.muted = true;
+    if (en.isIntersecting) v.play().catch(() => {}); else v.pause();
+  }), { threshold: .25 });
+  $$(".polaroid video").forEach(v => { v.muted = true; vio.observe(v); });
+})();
+
+/* Itinerario: alterna imagen / texto a cada lado de la línea */
+$("#timeline").innerHTML = CONFIG.itinerario.map((i, n) => {
+  const ico = `<div class="ico"><img src="${esc(i.img)}" alt=""></div>`;
+  const tx = `<div class="tx"><b${i.hora.length > 8 ? ' class="rango"' : ""}>${esc(i.hora)}</b><span>${esc(i.titulo)}</span>${i.detalle ? `<small>${esc(i.detalle)}</small>` : ""}</div>`;
+  return `<div class="t-item reveal">${n % 2 ? tx : ico}<div class="t-line"></div>${n % 2 ? ico : tx}</div><span class="t-dot"></span>`;
+}).join("");
+
+/* Regalos */
+if (CONFIG.mesaRegalos) $("#btn-mesa").href = CONFIG.mesaRegalos; else $("#btn-mesa").remove();
+if (CONFIG.mesaRegalosLogo) { $("#mesa-logo").src = CONFIG.mesaRegalosLogo; $("#mesa-logo").hidden = false; }
+if (CONFIG.qrCuenta) { $("#qr").src = CONFIG.qrCuenta; $("#qr").hidden = false; }
+if (CONFIG.cuentas && CONFIG.cuentas.length) {
+  $("#cuenta-datos").innerHTML = CONFIG.cuentas.map(c => `
+    <div class="cuenta-bloque">
+      <h4>${esc(c.etiqueta)}: ${esc(c.titular)}</h4>
+      <div class="cuenta">
+        <div><span><small>Banco</small>${esc(c.banco)}</span></div>
+        <div><span><small>${esc(c.tipo)}</small>${esc(c.numero)}</span><button class="copy" data-copy="${esc(c.numero)}">Copiar</button></div>
+      </div>
+    </div>`).join("");
+} else document.querySelector('[data-open="modal-cuenta"]').remove();
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]");
+  if (!b) return;
+  const txt = b.dataset.copy;
+  (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).catch(() => {
+    const t = document.createElement("textarea"); t.value = txt; document.body.appendChild(t); t.select();
+    document.execCommand("copy"); t.remove();
+  }).finally(() => { b.textContent = "Copiado"; b.classList.add("ok"); setTimeout(() => { b.textContent = "Copiar"; b.classList.remove("ok"); }, 1800); });
+});
+
+/* Dress code + fotos */
+$("#paleta").innerHTML = CONFIG.paleta.map(c => `<i style="background:${esc(c)}"></i>`).join("");
+/* Álbum de fotos */
+if (CONFIG.albumFotos) $("#btn-fotos").href = CONFIG.albumFotos; else $("#btn-fotos").closest(".card").remove();
+
+/* Ubicación */
+$$("[data-lugar]").forEach(b => b.addEventListener("click", () => {
+  const l = CONFIG.lugares[b.dataset.lugar];
+  $("#mapa-titulo").textContent = l.lugar;
+  $("#mapa-dir").textContent = l.direccion || "";
+  $("#mapa-iframe").src = "https://maps.google.com/maps?q=" + encodeURIComponent(l.embed || l.lugar) + "&z=16&output=embed";
+  $("#mapa-link").href = l.maps;
+  openModal("modal-mapa");
+}));
+
+/* Modales */
+function openModal(id){ $("#"+id).classList.add("open"); document.body.style.overflow="hidden"; }
+function closeModal(m){ m.classList.remove("open"); document.body.style.overflow=""; if (m.id==="modal-mapa") $("#mapa-iframe").src="about:blank"; }
+$$("[data-open]").forEach(b => b.addEventListener("click", () => openModal(b.dataset.open)));
+$$(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m || e.target.closest("[data-close]")) closeModal(m); }));
+document.addEventListener("keydown", e => { if (e.key === "Escape") $$(".modal.open").forEach(closeModal); });
+
+
+/* Pase personal desde la URL: ?nombre=Juan+Perez&invitados=2 */
+const params = new URLSearchParams(location.search);
+const invNombre = (params.get("nombre") || "").trim().slice(0, 80);
+const invPases = Math.min(Math.max(parseInt(params.get("invitados"), 10) || 0, 0), 20);
+$("#inv-nombre").textContent = invNombre || CONFIG.invitadoPorDefecto;
+const pases = invPases || CONFIG.pasesPorDefecto || 1;
+$("#inv-pases").textContent = pases;
+$("#inv-valida").textContent = (!invNombre && CONFIG.validaPorDefecto) ? CONFIG.validaPorDefecto : `Invitación válida para ${pases === 1 ? "una persona" : pases + " personas"}.`;
+
+/* Confirmación por Google Forms */
+/* Confirmación por WhatsApp */
+{
+  let msg = CONFIG.mensajeRsvp;
+  if (invNombre) msg += `\nNombre: ${invNombre}` + (invPases ? ` (${invPases} ${invPases === 1 ? "persona" : "personas"})` : "");
+  $("#btn-rsvp").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+
+/* Animaciones al hacer scroll */
+const io = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+}), { threshold: .12 });
+$$(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
